@@ -32,15 +32,5 @@
   }
 }
 
-.chip {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  font-weight: bold;
-  line-height: 50px;
-}
 
-.chip img {
-  height: 50px;
-  width: 50px;
-}
+
