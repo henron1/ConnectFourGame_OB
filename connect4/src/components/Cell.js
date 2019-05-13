@@ -9,9 +9,7 @@ export default function Cell(props) {
 
     return (
         <div className="cell">
-            <div className="chip">
-                {chip}
-            </div>
+            <div className="chip">{chip}</div>
         </div>
     )
 }
