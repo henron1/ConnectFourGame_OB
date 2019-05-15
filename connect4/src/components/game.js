@@ -15,7 +15,7 @@ export default class Game extends Component {
         this.state = {
             board : new Array(7).fill(0).map(() => new Array(6).fill(null)),
             gameOver: false,
-            recentPlayer:p1,
+            recentPlayer:[p1, p2]
         }
     }
 
@@ -26,7 +26,11 @@ export default class Game extends Component {
         )
     }
 
-    placeChip(){
+    placeChip(column){
+
+        /*
+            ??Use ternary in CSS inline style to render both chips in each array, and reveal them upon click??
+        */
         /*
             check and see if gameOver is false 
             if it is
@@ -37,8 +41,10 @@ export default class Game extends Component {
                 return
 
             new varialbe that holds updated column information
+            call check method method every time you place a chip!
 
         */
+
 
         // const updateColumn = 
 
@@ -55,15 +61,46 @@ export default class Game extends Component {
         }
     }
 
-    checkWin(player) {
+    checkWin(prevMove) {
         
         /*
         Win check logic psudeo code 
             Vertical
             Check every column
             if i[p1] || i[p2] exists 4 times
+                set state to gameover === true
+                print message player _ wins!
 
+            Horizontal
+            check rows
+             if i[p1] || i[p2] exists 4 times
+                set state to gameover === true
+                print message player _ wins! 
+
+            Diagonal left to right bottom up
+            check column 
+            set i max to 4 
+            record in count to track streaks
+            if player exists at [i+1] in next column
+                record and raise count
+            else 
+                count = 0
         */
+
+        const player = this.state.recentPlayer[0] 
+        streak = 0
+        // Horizontal
+        for (let i = 0; i <= 4; i++) {
+            if (this.state.board[i][i+1] === player) {
+                streak++
+                if (streak = 4) {
+                    return player
+                }
+            } else {
+
+            }
+        }
+        
     }
 
     
