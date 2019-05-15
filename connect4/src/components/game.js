@@ -15,14 +15,14 @@ export default class Game extends Component {
         this.state = {
             board : new Array(7).fill(0).map(() => new Array(6).fill(null)),
             gameOver: false,
-            recentPlayer:[p1],
+            recentPlayer:p1,
         }
     }
 
     // pass in column number into the state object
-    cellRender(colNum){
+    cellRender(column){
         return(
-            <CellSet value={this.state.board[colNum]} />
+            <CellSet value={this.state.board[column]} onClick={() => this.placeChip()} />
         )
     }
 
@@ -31,8 +31,28 @@ export default class Game extends Component {
             check and see if gameOver is false 
             if it is
                 fill bottom most index of column clicked on (bottom row value)
-                if last player = first
+                if last player = recentplayer[0]
+                    return the value of the next player
+            else
+                return
+
+            new varialbe that holds updated column information
+
         */
+
+        // const updateColumn = 
+
+        if (this.state.gameOver === false) {
+            if (recentPlayer === p1) {
+                return p1 // <-- not sure best way to physically push the image into this array
+                // setState
+            } else {
+                return p2
+                // setState
+            }
+        } else {
+            return
+        }
     }
 
     checkWin(player) {
@@ -41,7 +61,8 @@ export default class Game extends Component {
         Win check logic psudeo code 
             Vertical
             Check every column
-            if 
+            if i[p1] || i[p2] exists 4 times
+
         */
     }
 
