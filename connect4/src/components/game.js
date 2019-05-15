@@ -14,8 +14,8 @@ export default class Game extends Component {
         super(props);
         this.state = {
             board : new Array(7).fill(0).map(() => new Array(6).fill(null)),
-            gameOver: null,
-            firstPlayer:[p1, null, null],
+            gameOver: false,
+            recentPlayer:[p1],
         }
     }
 
@@ -24,6 +24,25 @@ export default class Game extends Component {
         return(
             <CellSet value={this.state.board[colNum]} />
         )
+    }
+
+    placeChip(){
+        /*
+            check and see if gameOver is false 
+            if it is
+                fill bottom most index of column clicked on (bottom row value)
+                if last player = first
+        */
+    }
+
+    checkWin(player) {
+        
+        /*
+        Win check logic psudeo code 
+            Vertical
+            Check every column
+            if 
+        */
     }
 
     
